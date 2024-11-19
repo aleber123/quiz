@@ -1,285 +1,251 @@
 const questions = [
+    // ... (rest of the questions array remains the same)
+];
+
+const presentationSections = [
     {
-        question: "What is the difference between 'let' and 'const' in JavaScript?",
-        answers: [
-            { text: "'let' can be reassigned, 'const' cannot be reassigned", correct: true },
-            { text: "There is no difference", correct: false },
-            { text: "'const' can be reassigned, 'let' cannot be reassigned", correct: false },
-            { text: "'let' is function-scoped, 'const' is block-scoped", correct: false }
-        ]
+        id: 1,
+        title: "Introduction",
+        time: "2-3",
+        content: `
+            Personal Introduction:
+            - Introduce yourself
+            - Mention living in Nacka with sambo and kids
+            - Recent graduation from Borås University
+            - Current work at CIBT
+            
+            Connection to Company:
+            - Mention brother Jacob
+            - His role as backend developer
+            - His influence on your application
+            
+            ChatGPT Usage:
+            - First full-stack application experience
+            - Learning tool for backend development
+            - Pros and cons of using ChatGPT
+            
+            Project Overview:
+            - Full-stack application for building management
+            - CRUD functionality
+            - MySQL database
+            - React frontend
+        `
     },
     {
-        question: "What is a REST API?",
-        answers: [
-            { text: "A programming language", correct: false },
-            { text: "A database management system", correct: false },
-            { text: "An architectural style for designing networked applications", correct: true },
-            { text: "A type of web browser", correct: false }
-        ]
+        id: 2,
+        title: "Application Functionality",
+        time: "5",
+        content: `
+            Overview of Features:
+            - Building management system
+            - Temperature control functionality
+            
+            Core Features:
+            - Add Building (POST request)
+            - View Buildings (GET request)
+            - Edit Building (PATCH request)
+            - Delete Building (DELETE request)
+            - Temperature Control
+            
+            Practical Use Cases:
+            - Facility manager usage
+            - Energy optimization
+            - Building management
+        `
     },
     {
-        question: "What is the purpose of the 'async/await' keywords in JavaScript?",
-        answers: [
-            { text: "To make the code run faster", correct: false },
-            { text: "To handle asynchronous operations in a synchronous-looking way", correct: true },
-            { text: "To create loops", correct: false },
-            { text: "To define variables", correct: false }
-        ]
+        id: 3,
+        title: "Technical Overview",
+        time: "7-8",
+        content: `
+            Architecture:
+            - Frontend: React + TypeScript
+            - Backend: Node.js + Express
+            - Database: MySQL
+            
+            Key Design Decisions:
+            - REST API choice
+            - MySQL database selection
+            - CSS styling approach
+        `
     },
     {
-        question: "What is the time complexity of binary search?",
-        answers: [
-            { text: "O(n)", correct: false },
-            { text: "O(n²)", correct: false },
-            { text: "O(log n)", correct: true },
-            { text: "O(1)", correct: false }
-        ]
+        id: 4,
+        title: "Challenges and Lessons",
+        time: "5-7",
+        content: `
+            Key Challenges:
+            - Learning backend development
+            - Error handling and debugging
+            - Effective use of ChatGPT
+            
+            Key Lessons:
+            - REST API design
+            - Frontend-backend integration
+            - Database management
+        `
     },
     {
-        question: "What is a closure in JavaScript?",
-        answers: [
-            { text: "A way to close the browser window", correct: false },
-            { text: "A function that has access to variables in its outer scope", correct: true },
-            { text: "A method to end a loop", correct: false },
-            { text: "A way to close a database connection", correct: false }
-        ]
+        id: 5,
+        title: "Improvements",
+        time: "3-5",
+        content: `
+            Improvements:
+            - JWT authentication
+            - Environment variables
+            - Database migrations
+            - Docker containerization
+            
+            Future Enhancements:
+            - Form validation
+            - Error handling
+            - Mobile responsiveness
+            - API documentation
+        `
     },
     {
-        question: "What is the difference between REST API and GraphQL, and why might you choose REST API?",
-        answers: [
-            { text: "REST API is more flexible with multiple endpoints, GraphQL has a single endpoint. REST is often simpler for basic CRUD operations", correct: true },
-            { text: "They are the same thing with different names", correct: false },
-            { text: "GraphQL is always faster than REST API", correct: false },
-            { text: "REST API only supports GET requests", correct: false }
-        ]
-    },
-    {
-        question: "What are environment variables and why are they important?",
-        answers: [
-            { text: "They're just for storing random data", correct: false },
-            { text: "They store configuration that varies between environments and sensitive data like API keys and database credentials", correct: true },
-            { text: "They're only used in development", correct: false },
-            { text: "They're used to style the environment", correct: false }
-        ]
-    },
-    {
-        question: "Why is API versioning important?",
-        answers: [
-            { text: "It's not important, you can change APIs whenever you want", correct: false },
-            { text: "To maintain backward compatibility and prevent breaking changes for existing clients", correct: true },
-            { text: "It makes the API look more professional", correct: false },
-            { text: "It's only needed for mobile apps", correct: false }
-        ]
-    },
-    {
-        question: "What's the purpose of database migrations?",
-        answers: [
-            { text: "To make the database faster", correct: false },
-            { text: "To track and version control database schema changes and make them reproducible", correct: true },
-            { text: "To backup the database", correct: false },
-            { text: "To delete old data", correct: false }
-        ]
-    },
-    {
-        question: "What's the difference between MySQL and PostgreSQL?",
-        answers: [
-            { text: "MySQL is free, PostgreSQL is paid", correct: false },
-            { text: "MySQL is typically simpler to set up and use, while PostgreSQL offers more advanced features and better standards compliance", correct: true },
-            { text: "They are exactly the same", correct: false },
-            { text: "PostgreSQL can't handle large databases", correct: false }
-        ]
-    },
-    {
-        question: "How can you automate the setup of a fullstack application?",
-        answers: [
-            { text: "It's impossible to automate", correct: false },
-            { text: "Using Docker compose or scripts to handle dependencies, database setup, and starting services", correct: true },
-            { text: "By hiring more developers", correct: false },
-            { text: "By removing all the code", correct: false }
-        ]
-    },
-    {
-        question: "What's the difference between GET and LIST operations?",
-        answers: [
-            { text: "They are exactly the same", correct: false },
-            { text: "GET retrieves a single resource by ID, while LIST retrieves multiple resources", correct: true },
-            { text: "LIST is not a real operation", correct: false },
-            { text: "GET is only for images", correct: false }
-        ]
-    },
-    {
-        question: "How can you implement authentication in a REST API?",
-        answers: [
-            { text: "Using JWT tokens or session-based authentication with middleware", correct: true },
-            { text: "Authentication isn't necessary", correct: false },
-            { text: "By hoping no one finds the API", correct: false },
-            { text: "Only allowing localhost connections", correct: false }
-        ]
-    },
-    {
-        question: "What are some alternatives to raw CSS for styling?",
-        answers: [
-            { text: "There are no alternatives to CSS", correct: false },
-            { text: "Styled-components, Tailwind CSS, SASS/SCSS, or CSS-in-JS solutions", correct: true },
-            { text: "Using only inline styles", correct: false },
-            { text: "Removing all styles", correct: false }
-        ]
-    },
-    {
-        question: "How should form validation be implemented?",
-        answers: [
-            { text: "No validation is needed", correct: false },
-            { text: "Client-side validation for UX, server-side validation for security, with clear feedback and reasonable constraints", correct: true },
-            { text: "Only server-side validation", correct: false },
-            { text: "Only client-side validation", correct: false }
-        ]
-    },
-    {
-        question: "How should API documentation be maintained?",
-        answers: [
-            { text: "Manually updating README files", correct: false },
-            { text: "Using tools like Swagger/OpenAPI to automatically generate documentation from code", correct: true },
-            { text: "Not documenting the API", correct: false },
-            { text: "Letting users figure it out", correct: false }
-        ]
-    },
-    {
-        question: "In the Building Control System, what are the minimum version requirements for Node.js and MySQL?",
-        answers: [
-            { text: "Node.js v12 and MySQL v5.7", correct: false },
-            { text: "Node.js v14 or higher and MySQL v8.0 or higher", correct: true },
-            { text: "Node.js v16 and MySQL v7.0", correct: false },
-            { text: "Any version will work", correct: false }
-        ]
-    },
-    {
-        question: "What is the purpose of the .env file in the Building Control System's backend?",
-        answers: [
-            { text: "To store frontend URLs", correct: false },
-            { text: "To store database credentials and configuration (DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE)", correct: true },
-            { text: "To store building temperatures", correct: false },
-            { text: "To configure the frontend port", correct: false }
-        ]
-    },
-    {
-        question: "Which ports are used by default in the Building Control System?",
-        answers: [
-            { text: "Frontend: 3000, Backend: 3001", correct: true },
-            { text: "Frontend: 8080, Backend: 8081", correct: false },
-            { text: "Frontend: 5000, Backend: 5001", correct: false },
-            { text: "Frontend: 4000, Backend: 4001", correct: false }
-        ]
-    },
-    {
-        question: "What columns are defined in the buildings table schema?",
-        answers: [
-            { text: "Only id and name", correct: false },
-            { text: "id, name, temperature, location, status", correct: true },
-            { text: "id, title, temp, address, state", correct: false },
-            { text: "name, temperature, location only", correct: false }
-        ]
-    },
-    {
-        question: "Which testing frameworks are used in both frontend and backend of the Building Control System?",
-        answers: [
-            { text: "Mocha and Chai", correct: false },
-            { text: "Jest", correct: true },
-            { text: "Cypress only", correct: false },
-            { text: "Selenium", correct: false }
-        ]
-    },
-    {
-        question: "What is the primary purpose of Axios in the Building Control System?",
-        answers: [
-            { text: "For styling components", correct: false },
-            { text: "For making API calls between frontend and backend", correct: true },
-            { text: "For database management", correct: false },
-            { text: "For user authentication", correct: false }
-        ]
-    },
-    {
-        question: "What should you do if you encounter a 'Network Error' in the frontend?",
-        answers: [
-            { text: "Only check if the frontend is running", correct: false },
-            { text: "Check backend on port 3001, verify MySQL status, check .env configuration, and ensure port 3001 is available", correct: true },
-            { text: "Restart the computer", correct: false },
-            { text: "Reinstall Node.js", correct: false }
-        ]
-    },
-    {
-        question: "What are the main features of the Building Control System?",
-        answers: [
-            { text: "Only temperature monitoring", correct: false },
-            { text: "Temperature control, CRUD operations for buildings, real-time updates, and persistent storage", correct: true },
-            { text: "Just a database interface", correct: false },
-            { text: "Only building deletion", correct: false }
-        ]
-    },
-    {
-        question: "How is TypeScript used in the Building Control System?",
-        answers: [
-            { text: "Only in the frontend", correct: false },
-            { text: "Both in frontend (with React) and backend (with Node.js/Express)", correct: true },
-            { text: "Only in the backend", correct: false },
-            { text: "It's not used at all", correct: false }
-        ]
-    },
-    {
-        question: "What command is used to verify MySQL status in the Building Control System?",
-        answers: [
-            { text: "mysql status", correct: false },
-            { text: "mysql.server status", correct: true },
-            { text: "status mysql", correct: false },
-            { text: "systemctl status mysql", correct: false }
-        ]
-    },
-    {
-        question: "What is the correct order of setup steps for the Building Control System?",
-        answers: [
-            { text: "Frontend first, then backend, then database", correct: false },
-            { text: "Database setup, then backend setup, then frontend setup", correct: true },
-            { text: "Any order works", correct: false },
-            { text: "Only backend setup is needed", correct: false }
-        ]
+        id: 6,
+        title: "Closing",
+        time: "2-3",
+        content: `
+            Summary:
+            - Project accomplishments
+            - Personal growth
+            - Learning journey
+            
+            Final Points:
+            - Thank the interviewers
+            - Express enthusiasm
+            - Open for questions
+        `
     }
 ];
 
-const startButton = document.getElementById('start-btn');
-const nextButton = document.getElementById('next-btn');
-const questionContainer = document.getElementById('question-container');
-const questionText = document.getElementById('question-text');
-const answerButtonsElement = document.getElementById('answer-buttons');
-const currentQuestionSpan = document.getElementById('current');
-const totalQuestionsSpan = document.getElementById('total');
-const scoreSpan = document.getElementById('score');
+const sectionList = document.getElementById('sectionList');
+const currentSectionTitle = document.getElementById('currentSectionTitle');
+const contentDisplay = document.getElementById('contentDisplay');
+const recommendedTime = document.getElementById('recommendedTime');
+const timerDisplay = document.getElementById('timer');
+const startButton = document.getElementById('startPractice');
+const stopButton = document.getElementById('stopPractice');
+const resetButton = document.getElementById('resetPractice');
 
-let shuffledQuestions, currentQuestionIndex, score;
+let currentSection = null;
+let timer = null;
+let seconds = 0;
 
-startButton.addEventListener('click', startQuiz);
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
+function initializeSections() {
+    presentationSections.forEach(section => {
+        const sectionElement = document.createElement('div');
+        sectionElement.className = 'section-item';
+        sectionElement.textContent = section.title;
+        sectionElement.addEventListener('click', () => selectSection(section));
+        sectionList.appendChild(sectionElement);
+    });
+}
+
+function selectSection(section) {
+    currentSection = section;
+    
+    // Update UI
+    document.querySelectorAll('.section-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.textContent === section.title) {
+            item.classList.add('active');
+        }
+    });
+    
+    currentSectionTitle.textContent = section.title;
+    recommendedTime.textContent = `${section.time} minutes`;
+    contentDisplay.innerHTML = section.content.split('\n').map(line => {
+        line = line.trim();
+        if (line.endsWith(':')) {
+            return `<strong>${line}</strong>`;
+        } else if (line.startsWith('-')) {
+            return `<li>${line.substring(1).trim()}</li>`;
+        }
+        return line;
+    }).join('<br>');
+    
+    resetTimer();
+}
+
+function startTimer() {
+    if (currentSection) {
+        startButton.disabled = true;
+        stopButton.disabled = false;
+        timer = setInterval(updateTimer, 1000);
+    } else {
+        alert('Please select a section first');
+    }
+}
+
+function stopTimer() {
+    clearInterval(timer);
+    startButton.disabled = false;
+    stopButton.disabled = true;
+}
+
+function resetTimer() {
+    stopTimer();
+    seconds = 0;
+    updateTimerDisplay();
+}
+
+function updateTimer() {
+    seconds++;
+    updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+}
+
+startButton.addEventListener('click', startTimer);
+stopButton.addEventListener('click', stopTimer);
+resetButton.addEventListener('click', resetTimer);
+
+initializeSections();
+stopButton.disabled = true;
+
+const startButtonQuiz = document.getElementById('start-btn');
+const nextButtonQuiz = document.getElementById('next-btn');
+const questionContainerQuiz = document.getElementById('question-container');
+const questionTextQuiz = document.getElementById('question-text');
+const answerButtonsElementQuiz = document.getElementById('answer-buttons');
+const currentQuestionSpanQuiz = document.getElementById('current');
+const totalQuestionsSpanQuiz = document.getElementById('total');
+const scoreSpanQuiz = document.getElementById('score');
+
+let shuffledQuestionsQuiz, currentQuestionIndexQuiz, scoreQuiz;
+
+startButtonQuiz.addEventListener('click', startQuiz);
+nextButtonQuiz.addEventListener('click', () => {
+    currentQuestionIndexQuiz++;
     setNextQuestion();
 });
 
 function startQuiz() {
-    startButton.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-    currentQuestionIndex = 0;
-    score = 0;
-    scoreSpan.textContent = score;
-    questionContainer.classList.remove('hide');
-    totalQuestionsSpan.textContent = questions.length;
+    startButtonQuiz.classList.add('hide');
+    shuffledQuestionsQuiz = questions.sort(() => Math.random() - 0.5);
+    currentQuestionIndexQuiz = 0;
+    scoreQuiz = 0;
+    scoreSpanQuiz.textContent = scoreQuiz;
+    questionContainerQuiz.classList.remove('hide');
+    totalQuestionsSpanQuiz.textContent = questions.length;
     setNextQuestion();
 }
 
 function setNextQuestion() {
     resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-    currentQuestionSpan.textContent = currentQuestionIndex + 1;
+    showQuestion(shuffledQuestionsQuiz[currentQuestionIndexQuiz]);
+    currentQuestionSpanQuiz.textContent = currentQuestionIndexQuiz + 1;
 }
 
 function showQuestion(question) {
-    questionText.textContent = question.question;
+    questionTextQuiz.textContent = question.question;
     question.answers.forEach(answer => {
         const button = document.createElement('button');
         button.textContent = answer.text;
@@ -288,15 +254,15 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
+        answerButtonsElementQuiz.appendChild(button);
     });
 }
 
 function resetState() {
     clearStatusClass(document.body);
-    nextButton.classList.add('hide');
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    nextButtonQuiz.classList.add('hide');
+    while (answerButtonsElementQuiz.firstChild) {
+        answerButtonsElementQuiz.removeChild(answerButtonsElementQuiz.firstChild);
     }
 }
 
@@ -304,22 +270,22 @@ function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
     
-    if (correct) score++;
-    scoreSpan.textContent = score;
+    if (correct) scoreQuiz++;
+    scoreSpanQuiz.textContent = scoreQuiz;
 
-    Array.from(answerButtonsElement.children).forEach(button => {
+    Array.from(answerButtonsElementQuiz.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     });
 
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
+    if (shuffledQuestionsQuiz.length > currentQuestionIndexQuiz + 1) {
+        nextButtonQuiz.classList.remove('hide');
     } else {
-        startButton.textContent = 'Restart Quiz';
-        startButton.classList.remove('hide');
+        startButtonQuiz.textContent = 'Restart Quiz';
+        startButtonQuiz.classList.remove('hide');
     }
 
     // Disable all buttons after selection
-    Array.from(answerButtonsElement.children).forEach(button => {
+    Array.from(answerButtonsElementQuiz.children).forEach(button => {
         button.disabled = true;
     });
 }

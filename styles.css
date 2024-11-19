@@ -1,4 +1,4 @@
-*, *::before, *::after {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,138 +6,135 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
 }
 
-.quiz-container {
-    background-color: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 600px;
-}
-
-.quiz-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.quiz-header h1 {
-    color: #2d3748;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-#progress, #score-display {
-    color: #4a5568;
-    font-size: 1rem;
-    margin: 10px 0;
-}
-
-#question-container {
-    margin: 20px 0;
-}
-
-#question-text {
+.timer {
     font-size: 1.2rem;
-    color: #2d3748;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
-.btn-grid {
+.main-content {
     display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+.section-nav {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-nav h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#sectionList {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    margin: 20px 0;
 }
 
-.answer-btn {
-    background-color: #e2e8f0;
-    border: 2px solid #cbd5e0;
-    border-radius: 10px;
-    padding: 15px;
-    color: #2d3748;
-    font-size: 1rem;
+.section-item {
+    padding: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s;
 }
 
-.answer-btn:hover {
-    background-color: #cbd5e0;
-    transform: translateY(-2px);
+.section-item:hover {
+    background-color: #f0f0f0;
 }
 
-.answer-btn.correct {
-    background-color: #48bb78;
+.section-item.active {
+    background-color: #3498db;
     color: white;
 }
 
-.answer-btn.wrong {
-    background-color: #f56565;
-    color: white;
+.practice-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.control-btn {
-    width: 100%;
+.current-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.time-indicator {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.content-area {
+    margin-bottom: 20px;
+    min-height: 300px;
     padding: 15px;
-    font-size: 1.1rem;
-    background-color: #4299e1;
-    color: white;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.2s;
 }
 
-.control-btn:hover {
-    background-color: #3182ce;
+#startPractice {
+    background-color: #2ecc71;
+    color: white;
 }
 
-.hide {
-    display: none;
+#stopPractice {
+    background-color: #e74c3c;
+    color: white;
 }
 
-@media (max-width: 480px) {
-    .quiz-container {
-        padding: 15px;
-        margin: 10px;
-        width: calc(100% - 20px);
-        max-width: none;
-    }
-    
-    .quiz-header h1 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-    
-    #question-text {
-        font-size: 1.1rem;
-        line-height: 1.4;
-    }
-    
-    .answer-btn {
-        padding: 15px;
-        margin: 5px 0;
-        min-height: 60px;
-        font-size: 1rem;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-    }
-    
-    .control-btn {
-        padding: 16px;
-        margin: 10px 0;
-        min-height: 54px;
-    }
-    
-    #progress, #score-display {
-        font-size: 0.9rem;
-        margin: 8px 0;
-    }
+#resetPractice {
+    background-color: #95a5a6;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

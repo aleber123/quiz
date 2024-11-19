@@ -3,27 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Interview Quiz</title>
+    <title>Presentation Practice Tool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <div class="quiz-header">
-            <h1>Tech Interview Quiz</h1>
-            <div id="progress">Question <span id="current">1</span> of <span id="total">0</span></div>
-            <div id="score-display">Score: <span id="score">0</span></div>
+    <div class="container">
+        <div class="header">
+            <h1>Presentation Practice Tool</h1>
+            <div class="timer">Time: <span id="timer">00:00</span></div>
         </div>
         
-        <div id="question-container">
-            <p id="question-text"></p>
-            <div id="answer-buttons" class="btn-grid">
-                <!-- Answer buttons will be inserted here -->
+        <div class="main-content">
+            <div class="section-nav">
+                <h2>Sections</h2>
+                <div id="sectionList"></div>
             </div>
-        </div>
-        
-        <div class="controls">
-            <button id="start-btn" class="control-btn">Start Quiz</button>
-            <button id="next-btn" class="control-btn hide">Next</button>
+            
+            <div class="practice-area">
+                <div class="current-section">
+                    <h3 id="currentSectionTitle">Select a section to begin</h3>
+                    <div class="time-indicator">
+                        <span>Recommended time: </span>
+                        <span id="recommendedTime">-</span>
+                    </div>
+                </div>
+                
+                <div class="content-area">
+                    <div id="contentDisplay"></div>
+                </div>
+                
+                <div class="controls">
+                    <button id="startPractice">Start Practice</button>
+                    <button id="stopPractice">Stop</button>
+                    <button id="resetPractice">Reset</button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
