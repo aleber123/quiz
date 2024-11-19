@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Interview Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>Tech Interview Quiz</h1>
+            <div id="progress">Question <span id="current">1</span> of <span id="total">0</span></div>
+            <div id="score-display">Score: <span id="score">0</span></div>
+        </div>
+        
+        <div id="question-container">
+            <p id="question-text"></p>
+            <div id="answer-buttons" class="btn-grid">
+                <!-- Answer buttons will be inserted here -->
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="start-btn" class="control-btn">Start Quiz</button>
+            <button id="next-btn" class="control-btn hide">Next</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
