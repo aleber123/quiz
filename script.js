@@ -5,118 +5,171 @@ const questions = [
 const presentationSections = [
     {
         id: 1,
-        title: "Introduction",
+        title: "1. Introduction",
         time: "2-3",
         content: `
             Personal Introduction:
-            - Introduce yourself
-            - Mention living in Nacka with sambo and kids
-            - Recent graduation from Borås University
-            - Current work at CIBT
-            
-            Connection to Company:
-            - Mention brother Jacob
-            - His role as backend developer
-            - His influence on your application
-            
-            ChatGPT Usage:
-            - First full-stack application experience
-            - Learning tool for backend development
-            - Pros and cons of using ChatGPT
-            
+            "Hi, I'm Alexander. I live in Nacka with my sambo and our two kids, Harry and Alice. I recently graduated from Borås University, where I studied software frontend development. I currently work at CIBT as a visa and legalization consultant, but I'm eager to transition into a career as a developer."
+
+            Connection to the Company:
+            "My brother, Jacob, who works here as a backend developer, encouraged me to apply for this role. He shared a lot about the team, the projects you work on, and the company culture, which made me excited to apply and showcase my skills."
+
+            Acknowledging the Use of ChatGPT:
+            "This assignment was my first experience building a full-stack application, and it required me to step outside my comfort zone, especially in backend development. To help me through the process, I used ChatGPT as a learning tool."
+
+            Pros and Cons:
+            Pros: "ChatGPT helped me quickly understand backend concepts, troubleshoot issues, and provided practical examples to guide me."
+            Cons: "The main challenge was ensuring I didn't rely on it blindly. I reviewed, adapted, and fully understood the solutions it suggested before implementing them."
+
             Project Overview:
-            - Full-stack application for building management
-            - CRUD functionality
-            - MySQL database
-            - React frontend
+            "The task was to create a full-stack application to manage buildings and their temperature settings. It included CRUD functionality, persistent data storage with MySQL, and a React-based frontend. I implemented a REST API for backend logic and used TypeScript across the stack for type safety and maintainability."
+
+            Setting the Tone:
+            "This project was a significant learning experience, and I'm excited to share the details, the challenges I faced, and the lessons I learned along the way."
         `
     },
     {
         id: 2,
-        title: "Application Functionality",
+        title: "2. Application Functionality",
         time: "5",
         content: `
             Overview of Features:
-            - Building management system
-            - Temperature control functionality
-            
+            "The application allows users to manage buildings, including adding, viewing, editing, and deleting building data. Users can also control and monitor building temperatures."
+
             Core Features:
-            - Add Building (POST request)
-            - View Buildings (GET request)
-            - Edit Building (PATCH request)
-            - Delete Building (DELETE request)
-            - Temperature Control
-            
+            Add a Building:
+            "Users can input a building's name, location, status, and temperature. This data is validated and saved to the MySQL database via a POST request."
+
+            View All Buildings:
+            "The app fetches all building data from the backend via a GET request. This is displayed in a clean, dynamic interface."
+
+            Edit a Building:
+            "Users can update building details, such as temperature or location. The app sends a PATCH request to update the database and reflects the changes immediately in the UI."
+
+            Delete a Building:
+            "If a building is no longer needed, users can delete it. This action sends a DELETE request to remove the record from the database."
+
+            Temperature Control:
+            "Users can adjust a building's temperature through a slider or input field, ensuring the changes are consistent across the system."
+
             Practical Use Cases:
-            - Facility manager usage
-            - Energy optimization
-            - Building management
+            "For example, a facility manager could use the app to monitor building conditions, adjust temperatures to optimize energy usage, or deactivate buildings that are no longer in use."
         `
     },
     {
         id: 3,
-        title: "Technical Overview",
+        title: "3. Technical Overview",
         time: "7-8",
         content: `
-            Architecture:
-            - Frontend: React + TypeScript
-            - Backend: Node.js + Express
-            - Database: MySQL
-            
-            Key Design Decisions:
-            - REST API choice
-            - MySQL database selection
-            - CSS styling approach
+            A. Architecture
+            "The application has three main components:"
+
+            Frontend:
+            "Built with React and TypeScript for a modular and scalable UI."
+
+            Backend:
+            "Built with Node.js and Express, using TypeScript for type safety and better error detection."
+
+            Database:
+            "MySQL is used for relational, structured data storage."
+
+            Integration:
+            "The frontend communicates with the backend via RESTful API calls, and the backend handles database interactions and business logic."
+
+            B. Key Design Decisions
+            REST API:
+            "I chose REST for its simplicity and alignment with CRUD operations. It's also well-supported and easy to extend."
+
+            MySQL Database:
+            "I selected MySQL because it's reliable and well-suited for structured data. It allowed me to define clear relationships and constraints for building data."
+
+            CSS Styling:
+            "I used raw CSS for styling in this project, but for a larger application, I'd consider frameworks like TailwindCSS or Styled Components for scalability."
         `
     },
     {
         id: 4,
-        title: "Challenges and Lessons",
+        title: "4. Challenges and Lessons",
         time: "5-7",
         content: `
             Key Challenges:
-            - Learning backend development
-            - Error handling and debugging
-            - Effective use of ChatGPT
-            
+
+            Learning Backend Development:
+            "This was my first backend project. I had to learn how to design APIs, manage a database, and handle data flow between the frontend and backend."
+
+            Error Handling and Debugging:
+            "Ensuring robust error handling across the stack was a challenge. For instance, handling invalid form submissions or failed API requests required thoughtful validation and fallback mechanisms."
+
+            Using ChatGPT Effectively:
+            "While ChatGPT provided guidance, I made a conscious effort to ensure I fully understood and adapted its suggestions to meet the requirements."
+
             Key Lessons:
-            - REST API design
-            - Frontend-backend integration
-            - Database management
+            "I learned how to design and implement REST APIs, integrate frontend and backend systems, and manage a relational database."
+            "This project also taught me how to use tools like ChatGPT responsibly, ensuring they enhance learning rather than replace understanding."
         `
     },
     {
         id: 5,
-        title: "Improvements",
+        title: "5. Improvements",
         time: "3-5",
         content: `
             Improvements:
-            - JWT authentication
-            - Environment variables
-            - Database migrations
-            - Docker containerization
-            
+
+            Security:
+            "I'd implement JWT authentication to secure the API and restrict sensitive operations to authorized users."
+
+            Environment Variables:
+            "I'd replace hardcoded database configurations with .env files for better flexibility and security."
+
+            Database Migrations:
+            "Using tools like sequelize or knex.js would make managing database schema changes easier and more reliable."
+
+            Automation:
+            "Containerizing the application with Docker would simplify setup and ensure consistency across environments."
+
             Future Enhancements:
-            - Form validation
-            - Error handling
-            - Mobile responsiveness
-            - API documentation
+            "I'd like to add more robust form validation, improve error handling for edge cases, and make the UI more responsive for mobile devices."
+            "Dynamic API documentation using Swagger would also make the system easier to understand and extend for future developers."
         `
     },
     {
         id: 6,
-        title: "Closing",
+        title: "6. Closing Reflection",
         time: "2-3",
         content: `
-            Summary:
-            - Project accomplishments
-            - Personal growth
-            - Learning journey
-            
-            Final Points:
-            - Thank the interviewers
-            - Express enthusiasm
-            - Open for questions
+            Summarize Your Accomplishments:
+            "This project pushed me to explore backend development and gain full-stack experience from scratch. Despite the challenges, I successfully delivered a functional application that meets the requirements."
+
+            Highlight Growth:
+            "I'm particularly proud of how I approached this project, leveraging tools like ChatGPT and advice from my brother Jacob to grow as a developer. This journey has given me confidence in my ability to learn and contribute meaningfully to development projects."
+
+            Thank the Interviewers:
+            "Thank you for this opportunity to present my work. I'd be happy to answer any questions or discuss specific aspects of the project in more detail."
+        `
+    },
+    {
+        id: 7,
+        title: "7. Q&A Preparation",
+        time: "5-10",
+        content: `
+            Common Questions and Answers:
+
+            Scalability:
+            Q: "How would you handle scalability in the future?"
+            A: "I'd optimize database queries, introduce caching (e.g., Redis), and use a load balancer to handle increased traffic."
+
+            ChatGPT Usage:
+            Q: "What are the risks of using ChatGPT?"
+            A: "The main risk is over-reliance, which I mitigated by critically evaluating and adapting its suggestions."
+
+            Brother's Role:
+            Q: "What role did Jacob play in your development?"
+            A: "Jacob encouraged me to apply for this role and provided insights into the company. However, I independently completed the project to demonstrate my own skills."
+
+            Unique Selling Points:
+            "Additionally, my sambo works as an architect and has strong connections within the building industry. Many of her clients are eager to adopt environmentally friendly practices for their projects, especially with the new EU regulations requiring sustainable construction."
+
+            "By working with Nordmatics, I could help bridge these connections and recommend your innovative solutions to her network, which could open up new opportunities for the company in this growing market."
         `
     }
 ];
@@ -157,15 +210,28 @@ function selectSection(section) {
     
     currentSectionTitle.textContent = section.title;
     recommendedTime.textContent = `${section.time} minutes`;
-    contentDisplay.innerHTML = section.content.split('\n').map(line => {
-        line = line.trim();
-        if (line.endsWith(':')) {
-            return `<strong>${line}</strong>`;
-        } else if (line.startsWith('-')) {
-            return `<li>${line.substring(1).trim()}</li>`;
-        }
-        return line;
-    }).join('<br>');
+    
+    // Format the content with proper spacing and quotation marks
+    const formattedContent = section.content
+        .split('\n')
+        .map(line => {
+            line = line.trim();
+            if (line.startsWith('"') && line.endsWith('"')) {
+                // Add a special class for quoted text
+                return `<div class="quote">${line}</div>`;
+            } else if (line.endsWith(':')) {
+                return `<h3>${line}</h3>`;
+            } else if (line.startsWith('Q:')) {
+                return `<div class="question">${line}</div>`;
+            } else if (line.startsWith('A:')) {
+                return `<div class="answer">${line}</div>`;
+            }
+            return `<div>${line}</div>`;
+        })
+        .filter(line => line.length > 0)
+        .join('');
+    
+    contentDisplay.innerHTML = formattedContent;
     
     resetTimer();
 }
