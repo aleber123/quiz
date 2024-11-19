@@ -1,137 +1,161 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --neutral-color: #95a5a6;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-radius: 8px;
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
+html {
     font-size: 16px;
 }
 
-/* Mobile-first container */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
 .container {
     width: 100%;
-    padding: 10px;
+    max-width: 100%;
+    padding: var(--spacing-sm);
     margin: 0 auto;
 }
 
+/* Header */
 .header {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 15px;
+    margin-bottom: var(--spacing-md);
 }
 
 .header h1 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-sm);
 }
 
 .timer {
     font-size: 1.1rem;
-    font-weight: bold;
-    color: #2c3e50;
-    padding: 8px 15px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--background-color);
+    border-radius: calc(var(--border-radius) / 2);
     display: inline-block;
 }
 
-/* Mobile-first grid */
+/* Main Content Layout */
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: var(--spacing-md);
 }
 
+/* Navigation */
 .section-nav {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .section-nav h2 {
-    margin-bottom: 12px;
-    color: #2c3e50;
     font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
 }
 
 #sectionList {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--spacing-sm);
 }
 
 .section-item {
-    padding: 10px;
-    border-radius: 6px;
+    padding: var(--spacing-sm);
+    border-radius: calc(var(--border-radius) / 2);
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 500;
-    border: 1px solid #eee;
-    font-size: 0.95rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: var(--card-background);
 }
 
 .section-item:hover {
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
 }
 
 .section-item.active {
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
-    border-color: #2980b9;
+    border-color: transparent;
 }
 
+/* Practice Area */
 .practice-area {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .current-section {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #eee;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--background-color);
 }
 
 .current-section h3 {
     font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 8px;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
 }
 
 .time-indicator {
-    color: #666;
+    color: var(--neutral-color);
     font-size: 0.9rem;
-    margin-top: 8px;
-    padding: 6px 12px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--background-color);
+    border-radius: calc(var(--border-radius) / 2);
     display: inline-block;
 }
 
+/* Content Area */
 .content-area {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    background-color: var(--background-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
 }
 
 .content-area h3 {
-    color: #2c3e50;
+    color: var(--secondary-color);
     font-size: 1.2rem;
-    margin: 20px 0 12px;
-    padding-bottom: 6px;
-    border-bottom: 2px solid #e9ecef;
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid rgba(0,0,0,0.1);
 }
 
 .content-area h3:first-child {
@@ -139,105 +163,97 @@ body {
 }
 
 .quote {
-    color: #2c3e50;
-    padding: 12px 15px;
-    background-color: #fff;
-    border-left: 4px solid #3498db;
-    margin: 12px 0;
-    border-radius: 0 8px 8px 0;
-    font-size: 1rem;
+    color: var(--secondary-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--card-background);
+    border-left: 4px solid var(--primary-color);
+    margin: var(--spacing-sm) 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
 .question {
-    color: #2c3e50;
-    font-weight: bold;
-    margin-top: 12px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
 }
 
 .answer {
-    color: #34495e;
-    margin-bottom: 12px;
-    padding-left: 15px;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
 }
 
+/* Controls */
 .controls {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-sm);
 }
 
 button {
-    flex: 1;
-    min-width: 100px;
-    padding: 12px 20px;
+    padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
-    border-radius: 6px;
+    border-radius: calc(var(--border-radius) / 2);
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
     transition: all 0.2s ease;
+    width: 100%;
 }
 
 #startPractice {
-    background-color: #2ecc71;
+    background-color: var(--success-color);
     color: white;
 }
 
 #stopPractice {
-    background-color: #e74c3c;
+    background-color: var(--danger-color);
     color: white;
 }
 
 #resetPractice {
-    background-color: #95a5a6;
+    background-color: var(--neutral-color);
     color: white;
 }
 
 button:hover {
     opacity: 0.9;
+    transform: translateY(-1px);
 }
 
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    transform: none;
 }
 
-/* Tablet styles */
-@media (min-width: 768px) {
+/* Tablet Styles */
+@media screen and (min-width: 768px) {
     .container {
-        padding: 15px;
+        padding: var(--spacing-md);
     }
 
     .header {
-        padding: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: var(--spacing-lg);
     }
 
     .header h1 {
         margin-bottom: 0;
     }
 
-    .practice-area {
-        padding: 20px;
-    }
-
-    .content-area {
-        padding: 20px;
-        font-size: 1rem;
-    }
-
-    button {
-        flex: 0 1 auto;
+    .controls {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Desktop styles */
-@media (min-width: 1024px) {
+/* Desktop Styles */
+@media screen and (min-width: 1024px) {
     .container {
         max-width: 1400px;
-        padding: 20px;
+        padding: var(--spacing-lg);
     }
 
     .main-content {
@@ -246,27 +262,18 @@ button:disabled {
 
     .section-nav {
         flex: 0 0 300px;
-        align-self: flex-start;
         position: sticky;
-        top: 20px;
+        top: var(--spacing-lg);
+        max-height: calc(100vh - var(--spacing-lg) * 2);
+        overflow-y: auto;
     }
 
     .practice-area {
         flex: 1;
-        padding: 30px;
-    }
-
-    .section-item:hover {
-        transform: translateX(5px);
+        padding: var(--spacing-xl);
     }
 
     .content-area {
-        font-size: 1.1rem;
-        line-height: 1.8;
-    }
-
-    .quote {
-        font-size: 1.1rem;
-        padding: 15px 20px;
+        padding: var(--spacing-lg);
     }
 }
