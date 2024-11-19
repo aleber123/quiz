@@ -1,144 +1,114 @@
-// Learning content data
-const learningContent = [
+// Quiz questions data
+const quizQuestions = [
     {
-        id: 'intro',
-        title: 'Introduction',
-        timeRange: '2-3',
-        keyPoints: [
-            {
-                question: "What is your background?",
-                answer: "I live in Nacka with my sambo and two kids (Harry and Alice), graduated from Borås University in software frontend development, and currently work at CIBT as a visa consultant."
-            },
-            {
-                question: "How did you learn about this position?",
-                answer: "Through my brother Jacob who works here as a backend developer. He shared insights about the team, projects, and company culture."
-            },
-            {
-                question: "What tools did you use for the assignment?",
-                answer: "This was my first full-stack application. I used ChatGPT as a learning tool to understand backend concepts and troubleshoot issues, while ensuring not to rely on it blindly."
-            }
+        question: "What is the main purpose of a building management system?",
+        options: [
+            "To manage employee schedules",
+            "To control and monitor building systems like HVAC and security",
+            "To handle building rent payments",
+            "To organize building maintenance schedules"
         ],
-        summary: "Key Points to Remember:\n- Personal: Live in Nacka, family with two kids\n- Education: Borås University, frontend development\n- Current role: CIBT visa consultant\n- Connection: Brother Jacob works here\n- Tools: ChatGPT for learning"
+        correctAnswer: 1,
+        explanation: "A building management system primarily controls and monitors building systems like HVAC, lighting, security, and other critical infrastructure."
     },
     {
-        id: 'functionality',
-        title: 'Application Functionality',
-        timeRange: '5',
-        keyPoints: [
-            {
-                question: "What are the core features of the application?",
-                answer: "1. Add a Building: Input building details with validation\n2. View All Buildings: Dynamic interface\n3. Edit a Building: Real-time updates\n4. Delete a Building: System removal\n5. Temperature Control: Adjust and monitor"
-            },
-            {
-                question: "Give a practical use case example",
-                answer: "A facility manager could use the app to monitor building conditions, adjust temperatures for energy optimization, and deactivate unused buildings."
-            },
-            {
-                question: "What makes your application user-friendly?",
-                answer: "- Intuitive interface for building management\n- Real-time monitoring capabilities\n- Streamlined temperature control\n- Easy-to-use CRUD operations"
-            }
+        question: "Which database is used in the building management application?",
+        options: [
+            "MongoDB",
+            "PostgreSQL",
+            "MySQL",
+            "SQLite"
         ],
-        summary: "Remember:\n- 5 core features (CRUD + Temperature)\n- Real-world usage by facility managers\n- Focus on user-friendly interface\n- Emphasis on practical utility"
+        correctAnswer: 2,
+        explanation: "The application uses MySQL as its database system for reliable structured data storage."
     },
     {
-        id: 'technical',
-        title: 'Technical Overview',
-        timeRange: '7-8',
-        keyPoints: [
-            {
-                question: "Describe the application architecture",
-                answer: "Three main components:\n1. Frontend: React/TypeScript\n2. Backend: Node.js/Express\n3. Database: MySQL\nCommunication via RESTful API calls"
-            },
-            {
-                question: "Why did you choose these technologies?",
-                answer: "- REST API: Simple, well-supported, aligned with CRUD\n- MySQL: Reliable for structured data\n- Raw CSS: Direct control, considering frameworks for scaling"
-            },
-            {
-                question: "What are the technical highlights?",
-                answer: "- Clean architecture separation\n- RESTful API implementation\n- Structured database design\n- Frontend-backend integration"
-            }
+        question: "What is the frontend framework used in the application?",
+        options: [
+            "Angular",
+            "Vue.js",
+            "React",
+            "Svelte"
         ],
-        summary: "Technical Stack:\n- Frontend: React/TypeScript\n- Backend: Node.js/Express\n- Database: MySQL\n- API: REST\n- Styling: Raw CSS"
+        correctAnswer: 2,
+        explanation: "React with TypeScript is used as the frontend framework for building the user interface."
     },
     {
-        id: 'challenges',
-        title: 'Challenges and Lessons',
-        timeRange: '5-7',
-        keyPoints: [
-            {
-                question: "What were your main challenges?",
-                answer: "1. First backend project experience\n2. Implementing robust error handling\n3. Using ChatGPT effectively as a learning tool"
-            },
-            {
-                question: "What were the key lessons learned?",
-                answer: "1. Designing and implementing REST APIs\n2. Integrating frontend and backend systems\n3. Managing relational databases\n4. Using AI tools responsibly"
-            },
-            {
-                question: "How did you overcome these challenges?",
-                answer: "- Systematic learning approach\n- Leveraging ChatGPT wisely\n- Testing and iteration\n- Research and documentation"
-            }
+        question: "Which of these is NOT a core feature of the building management system?",
+        options: [
+            "Adding new buildings",
+            "Employee payroll management",
+            "Temperature control",
+            "Editing building details"
         ],
-        summary: "Remember:\n- First backend experience\n- Learning curve with new technologies\n- Importance of error handling\n- Responsible AI tool usage"
+        correctAnswer: 1,
+        explanation: "Employee payroll management is not a feature of the system. The core features are CRUD operations for buildings and temperature control."
     },
     {
-        id: 'improvements',
-        title: 'Improvements',
-        timeRange: '3-5',
-        keyPoints: [
-            {
-                question: "What technical improvements would you make?",
-                answer: "1. JWT authentication for security\n2. Environment variables configuration\n3. Database migrations\n4. Docker containerization"
-            },
-            {
-                question: "What future enhancements are planned?",
-                answer: "1. Robust form validation\n2. Improved error handling\n3. Mobile-responsive UI\n4. Swagger API documentation"
-            },
-            {
-                question: "Why are these improvements important?",
-                answer: "- Enhanced security\n- Better development workflow\n- Improved user experience\n- Better maintainability"
-            }
+        question: "What type of API architecture is used in the application?",
+        options: [
+            "GraphQL",
+            "SOAP",
+            "gRPC",
+            "REST"
         ],
-        summary: "Focus Areas:\n- Security improvements\n- Development workflow\n- User experience\n- Documentation"
+        correctAnswer: 3,
+        explanation: "The application uses a RESTful API architecture for communication between frontend and backend."
     },
     {
-        id: 'closing',
-        title: 'Closing Reflection',
-        timeRange: '2-3',
-        keyPoints: [
-            {
-                question: "What are your main accomplishments?",
-                answer: "Successfully delivered a functional full-stack application, learning backend development from scratch while meeting all requirements."
-            },
-            {
-                question: "How have you grown through this project?",
-                answer: "Gained confidence in learning new technologies, leveraged tools effectively, and developed full-stack capabilities."
-            },
-            {
-                question: "What makes you a good fit for the role?",
-                answer: "- Demonstrated ability to learn quickly\n- Full-stack development experience\n- Problem-solving capabilities\n- Enthusiasm for growth"
-            }
+        question: "What is the main challenge faced during development?",
+        options: [
+            "First experience with backend development",
+            "Complex UI design",
+            "Database optimization",
+            "Team coordination"
         ],
-        summary: "Key Messages:\n- Successful project delivery\n- Significant learning growth\n- Full-stack capabilities\n- Ready for challenges"
+        correctAnswer: 0,
+        explanation: "The main challenge was this being the first backend development experience, requiring learning new concepts and technologies."
     },
     {
-        id: 'qa',
-        title: 'Q&A Preparation',
-        timeRange: 'N/A',
-        keyPoints: [
-            {
-                question: "How would you handle scalability?",
-                answer: "- Optimize database queries\n- Implement caching strategies\n- Use load balancing\n- Monitor performance metrics"
-            },
-            {
-                question: "What are the risks of using ChatGPT?",
-                answer: "Main risk is over-reliance, mitigated by:\n- Critical evaluation of suggestions\n- Understanding the code\n- Testing thoroughly\n- Using it as a learning tool"
-            },
-            {
-                question: "What unique value can you bring?",
-                answer: "- Fresh perspective on development\n- Quick learning ability\n- Connection to sustainable construction (through sambo)\n- Enthusiasm for growth"
-            }
+        question: "Which security improvement is planned for the application?",
+        options: [
+            "Biometric authentication",
+            "JWT authentication",
+            "OAuth2",
+            "SAML"
         ],
-        summary: "Prepare for:\n- Technical questions\n- Tool usage justification\n- Personal value proposition\n- Industry knowledge"
+        correctAnswer: 1,
+        explanation: "JWT (JSON Web Token) authentication is planned as a security improvement for the application."
+    },
+    {
+        question: "What tool was used to assist in learning backend development?",
+        options: [
+            "Stack Overflow",
+            "YouTube tutorials",
+            "ChatGPT",
+            "Online courses"
+        ],
+        correctAnswer: 2,
+        explanation: "ChatGPT was used as a learning tool to understand backend concepts and troubleshoot issues."
+    },
+    {
+        question: "Which of these is a planned future enhancement?",
+        options: [
+            "Mobile-responsive UI",
+            "Blockchain integration",
+            "AI-powered predictions",
+            "Virtual reality interface"
+        ],
+        correctAnswer: 0,
+        explanation: "A mobile-responsive UI is one of the planned future enhancements for better accessibility."
+    },
+    {
+        question: "What is the backend framework used in the application?",
+        options: [
+            "Django",
+            "Flask",
+            "Express.js",
+            "Spring Boot"
+        ],
+        correctAnswer: 2,
+        explanation: "Express.js with Node.js is used as the backend framework for the application."
     }
 ];
 
@@ -153,176 +123,129 @@ const stopButton = document.getElementById('stopPractice');
 const resetButton = document.getElementById('resetPractice');
 
 // State
-let currentSection = null;
 let currentQuestionIndex = 0;
-let isShowingAnswer = false;
+let score = 0;
 let isRunning = false;
+let selectedAnswer = null;
+let answeredQuestions = new Set();
 
 // Initialize the application
 function init() {
-    renderSections();
     setupEventListeners();
-    updateControls();
-}
-
-// Render section navigation
-function renderSections() {
-    sectionList.innerHTML = learningContent.map(section => `
-        <div class="section-item" 
-             data-section-id="${section.id}"
-             role="tab"
-             aria-selected="${currentSection?.id === section.id}"
-             tabindex="0">
-            ${section.title}
-        </div>
-    `).join('');
+    updateUI();
 }
 
 // Setup event listeners
 function setupEventListeners() {
-    sectionList.addEventListener('click', handleSectionClick);
-    sectionList.addEventListener('keydown', handleSectionKeydown);
-    
-    startButton.addEventListener('click', startLearning);
-    stopButton.addEventListener('click', stopLearning);
-    resetButton.addEventListener('click', resetLearning);
-    
-    document.addEventListener('keydown', (e) => {
-        if (e.key === ' ' && currentSection) {
-            e.preventDefault();
-            toggleAnswer();
-        }
-    });
+    startButton.addEventListener('click', startQuiz);
+    stopButton.addEventListener('click', stopQuiz);
+    resetButton.addEventListener('click', resetQuiz);
 }
 
-function startLearning() {
-    if (!currentSection || isRunning) return;
+function startQuiz() {
+    if (isRunning) return;
     isRunning = true;
+    score = 0;
     currentQuestionIndex = 0;
-    isShowingAnswer = false;
-    updateLearningDisplay();
+    answeredQuestions.clear();
+    updateUI();
     updateControls();
 }
 
-function stopLearning() {
+function stopQuiz() {
     if (!isRunning) return;
     isRunning = false;
+    showResults();
     updateControls();
 }
 
-function resetLearning() {
-    stopLearning();
+function resetQuiz() {
+    score = 0;
     currentQuestionIndex = 0;
-    isShowingAnswer = false;
-    updateLearningDisplay();
+    answeredQuestions.clear();
+    updateUI();
     updateControls();
-}
-
-function toggleAnswer() {
-    if (!isRunning) return;
-    isShowingAnswer = !isShowingAnswer;
-    updateLearningDisplay();
 }
 
 function nextQuestion() {
     if (!isRunning) return;
     currentQuestionIndex++;
-    if (currentQuestionIndex >= currentSection.keyPoints.length) {
-        currentQuestionIndex = 0;
+    if (currentQuestionIndex >= quizQuestions.length) {
+        stopQuiz();
+        return;
     }
-    isShowingAnswer = false;
-    updateLearningDisplay();
-}
-
-function previousQuestion() {
-    if (!isRunning) return;
-    currentQuestionIndex--;
-    if (currentQuestionIndex < 0) {
-        currentQuestionIndex = currentSection.keyPoints.length - 1;
-    }
-    isShowingAnswer = false;
-    updateLearningDisplay();
-}
-
-// Handle section selection
-function handleSectionClick(event) {
-    const sectionItem = event.target.closest('.section-item');
-    if (sectionItem) {
-        const sectionId = sectionItem.dataset.sectionId;
-        const section = learningContent.find(s => s.id === sectionId);
-        selectSection(section);
-    }
-}
-
-function handleSectionKeydown(event) {
-    if (event.target.classList.contains('section-item')) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            const sectionId = event.target.dataset.sectionId;
-            const section = learningContent.find(s => s.id === sectionId);
-            selectSection(section);
-        }
-    }
-}
-
-function selectSection(section) {
-    currentSection = section;
-    currentQuestionIndex = 0;
-    isShowingAnswer = false;
+    selectedAnswer = null;
     updateUI();
+}
+
+function checkAnswer(selectedIndex) {
+    if (!isRunning || answeredQuestions.has(currentQuestionIndex)) return;
     
-    document.querySelectorAll('.section-item').forEach(item => {
-        item.classList.toggle('active', item.dataset.sectionId === section.id);
-        item.setAttribute('aria-selected', item.dataset.sectionId === section.id);
-    });
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    selectedAnswer = selectedIndex;
+    
+    if (selectedIndex === currentQuestion.correctAnswer) {
+        score++;
+    }
+    
+    answeredQuestions.add(currentQuestionIndex);
+    updateUI();
+}
+
+function showResults() {
+    const percentage = (score / quizQuestions.length) * 100;
+    contentDisplay.innerHTML = `
+        <div class="results">
+            <h2>Quiz Complete!</h2>
+            <p>Your score: ${score} out of ${quizQuestions.length} (${percentage.toFixed(1)}%)</p>
+            <button onclick="resetQuiz()">Try Again</button>
+        </div>
+    `;
 }
 
 // Update UI elements
 function updateUI() {
-    if (currentSection) {
-        currentSectionTitle.textContent = currentSection.title;
-        recommendedTime.textContent = currentSection.timeRange + ' minutes';
-        updateLearningDisplay();
-    } else {
-        currentSectionTitle.textContent = 'Select a section to begin';
-        recommendedTime.textContent = '-';
-        contentDisplay.innerHTML = '';
-    }
-    updateControls();
-}
-
-function updateLearningDisplay() {
-    if (!currentSection || !isRunning) {
-        contentDisplay.innerHTML = currentSection ? currentSection.summary : '';
+    if (!isRunning) {
+        contentDisplay.innerHTML = '<div class="start-message">Click "Start Quiz" to begin!</div>';
+        currentSectionTitle.textContent = 'Building Management Quiz';
         return;
     }
 
-    const currentPoint = currentSection.keyPoints[currentQuestionIndex];
-    const progress = `Question ${currentQuestionIndex + 1} of ${currentSection.keyPoints.length}`;
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    const isAnswered = answeredQuestions.has(currentQuestionIndex);
     
     contentDisplay.innerHTML = `
-        <div class="learning-card">
-            <div class="progress">${progress}</div>
-            <div class="question">${currentPoint.question}</div>
-            ${isShowingAnswer ? `<div class="answer">${currentPoint.answer}</div>` : '<div class="hint">Press SPACE to show answer</div>'}
-            <div class="controls">
-                <button onclick="previousQuestion()" ${currentQuestionIndex === 0 ? 'disabled' : ''}>Previous</button>
-                <button onclick="toggleAnswer()">${isShowingAnswer ? 'Hide Answer' : 'Show Answer'}</button>
-                <button onclick="nextQuestion()">Next</button>
+        <div class="quiz-container">
+            <div class="progress">Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</div>
+            <div class="question">${currentQuestion.question}</div>
+            <div class="options">
+                ${currentQuestion.options.map((option, index) => `
+                    <button 
+                        onclick="checkAnswer(${index})"
+                        class="option-button ${isAnswered ? (index === currentQuestion.correctAnswer ? 'correct' : (index === selectedAnswer ? 'incorrect' : '')) : ''}"
+                        ${isAnswered ? 'disabled' : ''}
+                    >
+                        ${option}
+                    </button>
+                `).join('')}
             </div>
+            ${isAnswered ? `
+                <div class="explanation">
+                    <p>${currentQuestion.explanation}</p>
+                    ${currentQuestionIndex < quizQuestions.length - 1 ? 
+                        `<button onclick="nextQuestion()">Next Question</button>` : 
+                        `<button onclick="stopQuiz()">Show Results</button>`}
+                </div>
+            ` : ''}
         </div>
     `;
 }
 
 // Update control buttons state
 function updateControls() {
-    startButton.disabled = !currentSection || isRunning;
+    startButton.disabled = isRunning;
     stopButton.disabled = !isRunning;
-    resetButton.disabled = !currentSection || (!isRunning && currentQuestionIndex === 0);
-    
-    startButton.textContent = 'Start Learning';
-    stopButton.textContent = 'Stop';
-    resetButton.textContent = 'Reset';
+    resetButton.disabled = !isRunning && currentQuestionIndex === 0;
 }
 
 // Initialize the application
