@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Presentation Practice Tool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,12 +17,12 @@
         </div>
         
         <div class="main-content">
-            <nav class="section-nav">
+            <nav class="section-nav" role="navigation" aria-label="Presentation sections">
                 <h2>Sections</h2>
-                <div id="sectionList"></div>
+                <div id="sectionList" role="tablist"></div>
             </nav>
             
-            <main class="practice-area">
+            <main class="practice-area" role="main">
                 <div class="current-section">
                     <h3 id="currentSectionTitle">Select a section to begin</h3>
                     <div class="time-indicator">
@@ -29,13 +32,13 @@
                 </div>
                 
                 <div class="content-area">
-                    <div id="contentDisplay"></div>
+                    <div id="contentDisplay" role="tabpanel"></div>
                 </div>
                 
                 <div class="controls">
-                    <button id="startPractice">Start</button>
-                    <button id="stopPractice">Stop</button>
-                    <button id="resetPractice">Reset</button>
+                    <button id="startPractice" aria-label="Start practice">Start</button>
+                    <button id="stopPractice" aria-label="Stop practice">Stop</button>
+                    <button id="resetPractice" aria-label="Reset practice">Reset</button>
                 </div>
             </main>
         </div>
