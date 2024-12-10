@@ -1,21 +1,20 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --text-color: #27ae60;
-    --background-color: #ecf0f1;
-    --correct-color: #27ae60;
-    --incorrect-color: #e74c3c;
-    --neutral-color: #95a5a6;
-    --border-radius: 8px;
-    --spacing-xs: 5px;
-    --spacing-sm: 10px;
-    --spacing-md: 15px;
-    --spacing-lg: 20px;
-    --spacing-xl: 30px;
-    --safe-area-inset-top: env(safe-area-inset-top);
-    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    --primary-color: #3498db; /* Primär färg för knappar */
+    --secondary-color: #2980b9; /* Sekundär färg för knappar */
+    --text-color: #ffffff; /* Vit text för bättre kontrast */
+    --background-color: #ecf0f1; /* Neutral bakgrundsfärg */
+    --correct-color: #27ae60; /* Grön för rätt svar */
+    --incorrect-color: #e74c3c; /* Röd för fel svar */
+    --neutral-color: #95a5a6; /* Grå för neutrala element */
+    --border-radius: 8px; /* Rundade hörn */
+    --spacing-xs: 5px; /* Extra små avstånd */
+    --spacing-sm: 10px; /* Små avstånd */
+    --spacing-md: 15px; /* Medelavstånd */
+    --spacing-lg: 20px; /* Stora avstånd */
+    --spacing-xl: 30px; /* Extra stora avstånd */
+    --safe-area-inset-top: env(safe-area-inset-top); /* Säkerhetsavstånd för toppen */
+    --safe-area-inset-bottom: env(safe-area-inset-bottom); /* Säkerhetsavstånd för botten */
 }
-
 * {
     margin: 0;
     padding: 0;
